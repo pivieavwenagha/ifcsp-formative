@@ -1,7 +1,8 @@
 #Initiliasing variables and game introduction
 
 name = input("Welcome to this maths quiz game! What's your name? ")
-#ADD MORE EXPLANATION HERE
+
+#ADD MORE GAME EXPLANATION HERE
 
 print("Hi there", name, "What mode would you like to try? Easy (1), medium (2) or hard (3)?")
 mode = int(input(""))
@@ -14,7 +15,7 @@ med_a = [9,30,60,84,3]
 hard_q = ["(2+3)*4= ", "20/4*2= ", "5+2^3","3*(1+2^2)= ", "50-5*(6-2)= "]
 hard_a = [20,10,13,15,30]
 
-#subroutines for each difficulty mode
+#Subroutines for each difficulty mode
 
 def easy_mode(points):
 
@@ -49,11 +50,11 @@ def hard_mode(points):
             print("Wrong. The answer is", hard_a[i])
     return points
 
-#Code logic
+#Code logic - choosing the mode and entering a subroutine
 
 match mode:
     case 1:
-        points = easy_mode(0)
+        points = easy_mode(0) #Starting with 0 each time
     case 2:
         points = med_mode(0)
     case 3:
@@ -62,5 +63,5 @@ match mode:
         print("That is not an option. Please restart the game.")
         quit()
 
-
+#Ending message
 print("Well done", name, "You earned", points, "points!")
