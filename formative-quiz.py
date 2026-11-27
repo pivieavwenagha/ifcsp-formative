@@ -1,12 +1,3 @@
-#Initiliasing variables and game introduction
-
-name = input("Welcome to this maths quiz game! What's your name? ")
-
-#ADD MORE GAME EXPLANATION HERE
-
-print("Hi there", name, "What mode would you like to try? Easy (1), medium (2) or hard (3)?")
-mode = int(input(""))
-
 #Question and answer banks for each mode
 easy_q = ["2+3= ", "5+5= ", "23+21= ", "100-57= ", "88-12= "]
 easy_a = [5,10,44,43,76]
@@ -18,7 +9,6 @@ hard_a = [20,10,13,15,30]
 #Subroutines for each difficulty mode
 
 def easy_mode(points):
-
     for i in range(5):
         print(easy_q[i])
         answer = int(input(""))
@@ -50,18 +40,30 @@ def hard_mode(points):
             print("Wrong. The answer is", hard_a[i])
     return points
 
-#Code logic - choosing the mode and entering a subroutine
+#Main program logic
 
-match mode:
-    case 1:
-        points = easy_mode(0) #Starting with 0 each time
-    case 2:
-        points = med_mode(0)
-    case 3:
-        points = hard_mode(0)
-    case _:
-        print("That is not an option. Please restart the game.")
-        quit()
+running = True
+name = input("Welcome to this maths quiz game! What's your name? ")
 
-#Ending message
-print("Well done", name, "You earned", points, "points!")
+
+while running ==True:
+
+    print("Hi there", name, "What mode would you like to try? Easy (1), medium (2) or hard (3)?")
+    mode = int(input(""))
+
+    match mode:
+        case 1:
+            points = easy_mode(0) #Starting with 0 each time
+        case 2:
+            points = med_mode(0)
+        case 3:
+            points = hard_mode(0)
+        case _:
+            print("That is not an option. Please restart the game.")
+            quit()
+
+    print("Well done", name, "You earned", points, "points!")
+    keep_running = input("Do you want to go again (y/n)?" )
+    if keep_running =="n":
+        running = False
+        print("See you next time!")
