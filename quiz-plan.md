@@ -15,5 +15,10 @@
 3. ~~Create subroutines for each mode of the game~~
     ~~- If answer is correct, add a point. Else, do nothing~~
 4. Make first menu more intuitive by explaining that there are 5 questions.
-5. Edit README
-6. Create Technical Documentation
+5. Add while logic, so user can try different levels until they are ready to stop.
+    Do this in a new branch to try out making branches and merging
+6. Edit README
+7. Create Technical Documentation
+
+### Extras
+- make a counter for cumulative points in one runtime
